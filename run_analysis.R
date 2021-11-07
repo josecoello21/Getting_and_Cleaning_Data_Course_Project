@@ -71,8 +71,3 @@ if(files){
     write.table(x = all_dat, file = 'tidy_datasets.txt')
     write.table(x = mean_data, file = 'mean_data.txt')
 }
-
-
-
-
-
