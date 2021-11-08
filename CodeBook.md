@@ -15,42 +15,37 @@ Here are the data for the project:
 
 ## The dataset
 
-The following files are available for the train and test data. Their descriptions are equivalent.
+The dataset includes the following files:
 
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_y_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
+- 'features_info.txt': Shows information about the variables used on the feature vector.
 
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. The same description applies for the 'body_acc_y_train.txt' and 'body_acc_z_train.txt' files for the Y and Z axis.
+- 'features.txt': List of all features.
 
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. The same description applies for the 'body_gyro_y_train.txt' and 'body_gyro_z_train.txt' files for the Y and Z axis.
+- 'activity_labels.txt': Links the class labels with their activity name.
 
-## Notes: 
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
+- 'train/X_train.txt': Training set.
+
+- 'train/y_train.txt': Training labels.
+
+- 'test/X_test.txt': Test set.
+
+- 'test/y_test.txt': Test labels.
 
 ## Project stages
 1. First we download the dataset from the repository and then we unzip it.
 
-2. we create two vectors that contain the path of both the training data and test data, then we concatenate both vectors into one called 'paths'.
+2. We create two vectors that contain the path of both the training data and test data, then we concatenate both vectors into one called 'paths'.
 
-3. In a separate script we develop two functions called:
+3. We read each dataset and save it in a list called data.set.
 
-- dataset function
-- summ function
+4. Training, test and subject data are merged.
 
-The first reads the data set, each record represents a numeric vector in text format, we separate each element and only extract the numbers and change to numeric format.
+5. The mean and standard deviation of each measurement are extracted.
 
-The second function calculates the average and standard deviation for each of the supplied data (body_acc_x_train.txt, body_acc_x_test.txt, ...) and returns a matrix with the average and deviation of each of the data.
+6. We label descriptive activity names for the activities in the data.
 
-4. We read each dataset and save it in a list called datasets.
+7. We label the data with descriptive variable names.
 
-5. We call the 'summ function' and supply the 'data_sets' list that contains each of the data sets, in order to obtain the mean and deviation.
+8. From the data set, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-6. From the data set in step 5, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-7. Finally we write both data and call it 'measurements.txt' and 'mean.txt'.
-
-
-
-
-
-
+9. We export the result to the working directory.
