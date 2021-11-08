@@ -1,5 +1,4 @@
 library(tidyverse)
-library(readr)
 library(reshape2)
 
 if(!file.exists('dataset.zip')){
